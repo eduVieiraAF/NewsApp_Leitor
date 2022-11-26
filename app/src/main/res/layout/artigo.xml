@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/dark_slate_gray"
+    android:background="@color/navy_teal"
     android:padding="@dimen/_6sdp">
 
     <com.google.android.material.card.MaterialCardView
@@ -51,7 +51,7 @@
                 android:id="@+id/tv_noticia"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_300sdp"
-                android:textColor="@color/nile_night"
+                android:textColor="@color/dark_slate_gray"
                 android:text="@string/noticia"
                 android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
