@@ -1,30 +1,19 @@
 package com.example.newsappleitor
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.example.newsappleitor.databinding.ActivityMainBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity() {
-    val db = Firebase.firestore
+    private lateinit var binding: ActivityMainBinding
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
-    val notícias = db.collection("notícias")
-        .get()
-        .addOnSuccessListener { res ->
-            for (document in res) {
-                Log.d("NoticiaSucc", "${document}")
-            }
-        }
-
-        .addOnFailureListener { e ->
-            Log.d("NoticiaFail", "NOT FOUND")
-
-        }
 }
