@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar!!.hide()
 
         artigoRecyclerView = binding.rvNoticias
         artigoRecyclerView.layoutManager = LinearLayoutManager(this)
         artigoRecyclerView.setHasFixedSize(true)
-
 
         puxarArtigos()
     }

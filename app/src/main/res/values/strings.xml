@@ -9,5 +9,6 @@
     <string name="sem_registro">Sem registros</string>
     <string name="erro">ERRO</string>
     <string name="bd_erro">Erro ao buscar dados</string>
+    <string name="news">Notícias</string>
     <!-- Strings used for fragments for navigation -->
 </resources>
