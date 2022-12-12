@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.newsappleitor.databinding.ActivityMainBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         artigoRecyclerView.setHasFixedSize(true)
 
         puxarArtigos()
+        atualizar()
     }
 
     private fun puxarArtigos() {
@@ -53,5 +55,16 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("Okay") { _, _ -> }
                     .show()
             }
+    }
+
+    fun atualizar() {
+        val refresh = binding.swipeRv
+        refresh.setOnRefreshListener {
+            artigoMutableList.clear()
+            puxarArtigos()
+            refresh.isRefreshing = false
+        }
+
+        setContentView(binding.root)
     }
 }
