@@ -10,5 +10,6 @@
     <string name="erro">ERRO</string>
     <string name="bd_erro">Erro ao buscar dados</string>
     <string name="news">Notícias</string>
+    <string name="atualizar">Notícias atualizadas</string>
     <!-- Strings used for fragments for navigation -->
 </resources>

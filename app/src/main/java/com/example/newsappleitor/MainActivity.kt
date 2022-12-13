@@ -1,11 +1,12 @@
 package com.example.newsappleitor
 
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.newsappleitor.databinding.ActivityMainBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -63,8 +64,11 @@ class MainActivity : AppCompatActivity() {
             artigoMutableList.clear()
             puxarArtigos()
             refresh.isRefreshing = false
-        }
 
-        setContentView(binding.root)
+            val toast = Toast.makeText(this, R.string.atualizar, Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER, 0, 0)
+            toast.show()
+            setContentView(binding.root)
+        }
     }
 }
