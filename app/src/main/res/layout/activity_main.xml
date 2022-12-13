@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/main_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_navy_teal"
     android:elevation="@dimen/_18sdp"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".MainActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_1sdp"
         android:layout_marginHorizontal="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_1sdp"
         android:backgroundTint="@color/navy_teal"
-        app:strokeColor="@color/light_navy_teal"
         app:cardCornerRadius="@dimen/_8sdp"
-        app:strokeWidth="@dimen/_2sdp"
-        >
+        app:strokeColor="@color/light_navy_teal"
+        app:strokeWidth="@dimen/_2sdp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/white"
             android:fontFamily="cursive"
-            android:textSize="@dimen/_36sdp"
+            android:gravity="center"
             android:text="@string/news"
-            android:textStyle="bold"/>
+            android:textColor="@color/white"
+            android:textSize="@dimen/_36sdp"
+            android:textStyle="bold" />
     </com.google.android.material.card.MaterialCardView>
 
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:id="@+id/swipe_rv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_noticias"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_noticias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item" />
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </LinearLayout>

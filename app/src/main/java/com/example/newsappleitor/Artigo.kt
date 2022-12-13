@@ -6,3 +6,4 @@ data class Artigo(
     var notícia: String? = null,
     var título: String? = null
 )
+

@@ -1,8 +1,7 @@
 package com.example.newsappleitor
 
+import android.app.Dialog
 import android.os.Bundle
-import android.view.Gravity
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private var db = FirebaseFirestore.getInstance()
     private lateinit var artigoRecyclerView: RecyclerView
     private val artigoMutableList: MutableList<Artigo> = mutableListOf()
+    private var mProgressDialog: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
                     artigoMutableList.add(artigo!!)
                 }
 
+                customToastOff()
+
                 artigoRecyclerView.adapter = MyAdapter(this@MainActivity, artigoMutableList)
             } else {
                 AlertDialog.Builder(this@MainActivity)
@@ -58,17 +60,27 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    fun atualizar() {
+    private fun atualizar() {
         val refresh = binding.swipeRv
         refresh.setOnRefreshListener {
             artigoMutableList.clear()
             puxarArtigos()
             refresh.isRefreshing = false
 
-            val toast = Toast.makeText(this, R.string.atualizar, Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER, 0, 0)
-            toast.show()
+            customToastOn()
             setContentView(binding.root)
         }
+    }
+
+    private fun customToastOn() {
+        mProgressDialog = Dialog(this)
+        mProgressDialog.let {
+            it?.setContentView(R.layout.dialog_custom_progress)
+            it?.show()
+        }
+    }
+
+    private fun customToastOff() {
+        mProgressDialog?.dismiss()
     }
 }
