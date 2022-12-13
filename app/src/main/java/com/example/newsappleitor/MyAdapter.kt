@@ -1,3 +1,5 @@
+@file:Suppress("NonAsciiCharacters", "PropertyName", "SpellCheckingInspection")
+
 package com.example.newsappleitor
 
 import android.content.Context

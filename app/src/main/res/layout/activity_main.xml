@@ -17,7 +17,8 @@
         android:layout_marginTop="@dimen/_1sdp"
         android:backgroundTint="@color/navy_teal"
         app:cardCornerRadius="@dimen/_8sdp"
-        app:strokeColor="@color/light_navy_teal"
+        app:cardElevation="@dimen/_15sdp"
+        app:strokeColor="@color/nile_night"
         app:strokeWidth="@dimen/_2sdp">
 
         <TextView

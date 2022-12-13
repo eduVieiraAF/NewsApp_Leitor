@@ -1,3 +1,5 @@
+@file:Suppress("NonAsciiCharacters", "SpellCheckingInspection")
+
 package com.example.newsappleitor
 
 data class Artigo(

@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package com.example.newsappleitor
 
 import android.app.Dialog
